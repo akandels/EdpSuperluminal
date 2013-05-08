@@ -36,7 +36,7 @@ class Module
     public function cache($e)
     {
         $request = $e->getRequest();
-        if ($request instanceof ConsoleRequest ||
+        if (!$request instanceof ConsoleRequest &&
             $request->getQuery()->get('EDPSUPERLUMINAL_CACHE', null) === null) {
             return;
         }
